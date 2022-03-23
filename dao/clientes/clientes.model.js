@@ -3,13 +3,13 @@ const getDb = require('../mongodb');
 
 let db = null;
 
-class Medicamentos {
+class Clientes {
   collection = null;
   constructor() {
     getDb()
       .then((database) => {
         db = database;
-        this.collection = db.collection('Medicamentos');
+        this.collection = db.collection('Clientes');
         if (process.env.MIGRATE === 'true') {
           // Por Si se ocupa algo
         }
@@ -17,27 +17,28 @@ class Medicamentos {
       .catch((err) => { console.error(err) });
   }
 
-  async new(codigo, nombre, costo, cantidad, fechaVencimiento, proveedorId) {
-    const newMedicamento = {
-         codigo,
-         nombre, 
-         costo, 
-         cantidad, 
-         fechaVencimiento, 
-         proveedorId
+  //CLIENTE NUEVO 
+    async new(identidad, nombre, apellido, telefono, direccion) {
+    const newCliente = {
+        identidad, 
+        nombre, 
+        apellido, 
+        telefono, 
+        direccion
     };
-    const rslt = await this.collection.insertOne(newMedicamento);
+    const rslt = await this.collection.insertOne(newCliente);
     return rslt;
   }
 
-
-  async getAll() {
+//TRAER TODOS LOS CLIENTES 
+ async getAll() {
     const cursor = this.collection.find({});
     const documents = await cursor.toArray();
     return documents;
   }
 
-  async getFaceted(page, items, filter = {}) {
+  //TRAER CLIENTES POR PAGINA Y CANTIDAD DE ITEMS 
+   async getFaceted(page, items, filter = {}) {
     const cursor = this.collection.find(filter);
     const totalItems = await cursor.count();
     cursor.skip((page -1) * items);
@@ -51,36 +52,37 @@ class Medicamentos {
       resultados
     };
   }
-  async getById(id) {
+
+  //POR ID 
+    async getById(id) {
     const _id = new ObjectId(id);
     const filter = {_id};
     console.log(filter);
     const myDocument = await this.collection.findOne(filter);
     return myDocument;
   }
-  
-  async updateOne(id, codigo, nombre, costo, cantidad, fechaVencimiento, proveedorId) {
+
+
+  //ACTUALIZAR UN CLIENTE 
+  async updateOne(id, identidad, nombre, apellido, telefono, direccion) {
     const filter = {_id: new ObjectId(id)};
-    // UPDATE Medicamentos SET campo=valor, campo=valor where id= id;
+    // UPDATE Clientes SET campo=valor, campo=valor where id= id;
     const updateCmd = {
       '$set':{
-        codigo,
-        nombre,
-        costo,
-        cantidad,
-        fechaVencimiento, 
-        proveedorId
+      identidad, 
+      nombre, 
+      apellido, 
+      telefono, 
+      direccion
       }
     };
     return await this.collection.updateOne(filter, updateCmd);
   }
 
-  
-  async deleteOne(id) {
+  //ELIMINAR UN CLIENTE -------PENDIENTE-------------
+   async deleteOne(id) {
     
   }
 
-
 }
-
-module.exports = Medicamentos;
+  module.exports = Clientes;

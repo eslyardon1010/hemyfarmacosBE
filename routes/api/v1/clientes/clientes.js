@@ -1,14 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-const Medicamentos = require('../../../../dao/medicamentos/medicamentos.model');
-const medicamentosModel = new Medicamentos();
+const Clientes = require('../../../../dao/clientes/clientes.model');
+const clientesModel = new Clientes();
 
 
 router.get('/', (req, res) => {
   res.status(200).json(
     {
-      endpoint: 'Medicamentos',
+      endpoint: 'Clientes',
       updates: new Date(2022,0,19,18,41,0)
     }
   );
@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
 router.get('/all', async (req, res) => {
   try {
     console.log("User Request", req.user);
-    const rows = await medicamentosModel.getAll();
-    res.status(200).json({status:'ok', medicamento: rows});
+    const rows = await clientesModel .getAll();
+    res.status(200).json({status:'ok', cliente: rows});
   } catch (ex) {
     console.log(ex);
     res.status(500).json({status:'failed'});
@@ -28,8 +28,8 @@ router.get('/all', async (req, res) => {
 router.get('/byid/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const row = await medicamentosModel.getById(id);
-    res.status(200).json({ status: 'ok', medicamento: row });
+    const row = await clientesModel .getById(id);
+    res.status(200).json({ status: 'ok', cliente: row });
   } catch (ex) {
     console.log(ex);
     res.status(500).json({ status: 'failed' });
@@ -44,8 +44,8 @@ router.get('/facet/:page/:items', async (req, res) => {
   const items = parseInt(req.params.items, 10);
   if (allowedItemsNumber.includes(items)) {
     try {
-      const medicamentos = await medicamentosModel.getFaceted(page, items);
-      res.status(200).json({docs:medicamentos});
+      const clientes = await clientesModel.getFaceted(page, items);
+      res.status(200).json({docs:clientes});
     } catch (ex) {
       console.log(ex);
       res.status(500).json({ status: 'failed' });
@@ -62,8 +62,8 @@ router.get('/byname/:name/:page/:items', async (req, res) => {
   const items = parseInt(req.params.items, 10);
   if (allowedItemsNumber.includes(items)) {
     try {
-      const medicamentos = await medicamentosModel.getFaceted(page, items, {nombres: name});
-      res.status(200).json({ docs: medicamentos });
+      const clientes = await clientesModel.getFaceted(page, items, {nombres: name});
+      res.status(200).json({ docs: clientes });
     } catch (ex) {
       console.log(ex);
       res.status(500).json({ status: 'failed' });
@@ -77,9 +77,9 @@ router.get('/byname/:name/:page/:items', async (req, res) => {
 
 
 router.post('/new', async (req, res) => {
-  const {codigo, nombre, costo, cantidad, fechaVencimiento, proveedorId} = req.body;
+  const {identidad, nombre, apellido, telefono, direccion} = req.body;
   try {
-    rslt = await medicamentosModel.new(codigo, nombre, costo, cantidad, fechaVencimiento, proveedorId);
+    rslt = await clientesModel.new(identidad, nombre, apellido, telefono, direccion);
     res.status(200).json(
       {
         status: 'ok',
@@ -99,9 +99,9 @@ router.post('/new', async (req, res) => {
 //router.put();
 router.put('/update/:id', async (req, res) => {
   try{
-    const { codigo, nombre, costo, cantidad, fechaVencimiento, proveedorId } = req.body;
+    const { identidad, nombre, apellido, telefono, direccion } = req.body;
     const { id } = req.params;
-    const result = await medicamentosModel.updateOne(id, codigo, nombre, costo, cantidad, fechaVencimiento, proveedorId);
+    const result = await clientesModel.updateOne(id, identidad, nombre, apellido, telefono, direccion);
     res.status(200).json({
       status:'ok',
       result
@@ -118,7 +118,7 @@ router.put('/update/:id', async (req, res) => {
 router.delete('/delete/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const result = await medicamentosModel.deleteOne(id);
+    const result = await clientesModel.deleteOne(id);
     res.status(200).json({
       status: 'ok',
       result

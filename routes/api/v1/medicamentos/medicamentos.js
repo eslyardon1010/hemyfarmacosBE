@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   res.status(200).json(
     {
       endpoint: 'Medicamentos',
-      updates: new Date(2022,0,19,18,41,0)
+      updates: new Date(2022,03,18,19,51,0)
     }
   );
 }); //GET /

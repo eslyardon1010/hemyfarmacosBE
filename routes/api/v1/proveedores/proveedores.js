@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   res.status(200).json(
     {
       endpoint: 'Proveedores',
-      updates: new Date(2022,0,19,18,41,0)
+      updates: new Date(2022,02,20,20,41,0)
     }
   );
 }); //GET /

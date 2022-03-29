@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
   res.status(200).json(
     {
       endpoint: 'Clientes',
-      updates: new Date(2022,0,19,18,41,0)
+      updates: new Date(2022,02,17,13,41,0)
     }
   );
 }); //GET /
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get('/all', async (req, res) => {
   try {
     console.log("User Request", req.user);
-    const rows = await clientesModel .getAll();
+    const rows = await clientesModel.getAll();
     res.status(200).json({status:'ok', cliente: rows});
   } catch (ex) {
     console.log(ex);
@@ -28,7 +28,7 @@ router.get('/all', async (req, res) => {
 router.get('/byid/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const row = await clientesModel .getById(id);
+    const row = await clientesModel.getById(id);
     res.status(200).json({ status: 'ok', cliente: row });
   } catch (ex) {
     console.log(ex);

@@ -1,59 +1,77 @@
-.form_field{
-  display: flex;
-  flex-direction: column;
-  padding:0.5rem;
+.form_field {
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem;
 }
-.form_field label{
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+
+.form_field label {
+    margin-top: 10px;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-right: 12px;
+    margin-bottom: 0.25rem;
+    color: rgb(75, 73, 73);
 }
-.form_field input{
-  padding:0.5rem;
-  font-size:1rem;
-  border-width: thin;
-  border-radius: 0.25rem;
+
+.form_field input {
+    font-size: 0.90rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: rgba(238, 238, 238, 0.892);
+    padding: 0.5em 1.5em;
+    margin-top: 6px;
+    margin-left: 12px;
+    margin-right: 12px;
+    align-items: center;
 }
-.form_field input:focus{
-  outline-color: darkgreen;
-  outline-width: thin;
+
+.form_field input:focus {
+    outline-color: grey;
+    outline-width: thin;
 }
-.form_field .field_info{
-  padding:0.5rem 0.25rem;
-  padding-right: 0;
-  font-size:0.8rem;
+
+.form_field .field_info {
+    padding: 0.5rem 0.25rem;
+    padding-right: 0;
+    font-size: 0.8rem;
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
 }
-.form_field .field_error{
-  padding:0.5rem 0.25rem;
-  padding-right: 0;
-  font-size:0.8rem;
-  color: darkred;
+
+.form_field .field_error {
+    padding: 0.5rem 0.25rem;
+    padding-right: 0;
+    font-size: 0.8rem;
+    color: darkred;
+    text-align: center;
 }
 
 button {
-  margin:0.5rem;
-  padding:0.5rem;
-  background-color: #000;
-  color:#fff;
-  font-weight: 600;
-  border-width: thin;
-  border-style: solid;
-  border-color: #000;
-  border-radius:0.25rem;
-  font-size:1rem;
-  cursor: pointer;
+    margin: 0.5rem;
+    padding: 0.4rem;
+    color: #fff;
+    font-weight: 600;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 0.50rem;
+    font-size: 0.80rem;
+    cursor: pointer;
 }
 
-button.button_primary{
-  padding:0.75rem;
-  background-color: darkgreen;
+button.button_primary {
+    margin-left: 60px;
+    padding: 0.60rem;
+    background-color: #33D2FF;
 }
 
-button.button_secondary{
-  padding:0.75rem;
-  background-color: darkorange;
-  color:#000;
+button.button_secondary {
+    padding: 0.60rem;
+    background-color: #33D2FF;
+    color: white;
 }
 
-button.pill {
-  border-radius: 50%;
+button:focus,
+button:hover {
+    background-color: #142850;
 }

@@ -19,7 +19,7 @@ const Login = ({
   let navigate = useNavigate();
   return (
     
-    <Page header={(<h2>&nbsp;Iniciar Sesión</h2>)} footer={<Nav/>}>
+    <Page header={(<h2>&nbsp;Iniciar Sesión</h2>)}>
       <section className="align">
       <section className = "container-login"> 
         <Input 

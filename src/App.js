@@ -12,6 +12,9 @@ import Login from './Components/Views/Login/LoginPage';
 import Todo from './Components/Views/Todo/TodoPage';
 import Medicamentos from './Components/Views/Medicamentos/MedicametosPage';
 import Principal from './Components/Views/Principal/PrincipalPage'
+import Clientes from './Components/Views/Clientes/ClientesPage';
+
+
 function App() {
   return (
     <Provider store={store}>
@@ -24,6 +27,7 @@ function App() {
 
             <Route path="/todo" element={<Private><Todo /></Private>} />
             <Route path="/medicamentos" element={<Private><Medicamentos /></Private>} />
+            <Route path="/clientes" element={<Private><Clientes /></Private>} />
             <Route path="/principal" element={<Private><Principal /></Private>} />
           </Routes>
         </BrowserRouter>

@@ -24,6 +24,12 @@ const Nav = ()=>{
             >
               Todos
             </NavLink>
+            <NavLink
+              to='/clientes'
+              className={currentLocation.pathname === '/clientes' ? 'active' : ''}
+            >
+            Clientes
+            </NavLink>
           </li>
         </ul>
       </nav>

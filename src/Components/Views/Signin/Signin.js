@@ -3,6 +3,7 @@ import Input from "../../UX/Forms/Input";
 import { PrimaryButton, SecondaryButton } from "../../UX/Forms/Button";
 import Nav from "../../UX/Nav/Nav";
 import "../Login/Login.css"
+import { useNavigate } from "react-router-dom"; 
 const SignIn = ({
   txtCorreoValue,
   txtPasswordValue,
@@ -12,6 +13,7 @@ const SignIn = ({
   onConfirmClick,
   onCancelClick
 })=> {
+  let navigate = useNavigate();
   return (
     <Page header={(<h2>&nbsp;Crear Cuenta</h2>)} footer={<Nav />}>
       <section className="align">
@@ -36,9 +38,9 @@ const SignIn = ({
           onChange={onChangeHandler}
         />
         <PrimaryButton onClick={onConfirmClick}>
-          Crear Cuenta
+          Registrarme
         </PrimaryButton>
-        <SecondaryButton onClick={onCancelClick}>
+        <SecondaryButton  onClick={() => navigate("/login")}>
           Tengo Cuenta
         </SecondaryButton>
       </section>

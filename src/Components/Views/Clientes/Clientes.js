@@ -13,6 +13,7 @@ const Clientes = ({clientes})=>{
       <th> NOMBRE </th>
       <th>APELLIDO</th>
       <th>TELEFONO</th>
+      <th>ELIMINAR</th>
     
     </thead>
      </table>
@@ -38,12 +39,15 @@ const ClienteItem = ({cliente})=>{
             <td> {cliente.nombre} </td>
             <td> {cliente.apellido} </td>
             <td> {cliente.telefono}  </td>
+            <td>
+              <button className="btneliminar">
+              <img src="https://i.ibb.co/JdmBTkt/delete.png" alt="" />
+              </button>
+             </td>
           </tr>
         </tbody>
       </table>
     </section>
-   
-     
   );
   
 }

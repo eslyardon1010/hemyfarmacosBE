@@ -41,3 +41,11 @@ a {
     color: white;
     font-size: 14pt;
 }
+.btneliminar {
+    background-color: red;
+    border-style: none;
+    border-radius: 100%;
+}
+.btneliminar:hover {
+    background-color: red;
+}

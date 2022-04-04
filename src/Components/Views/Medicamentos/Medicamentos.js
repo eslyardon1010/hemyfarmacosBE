@@ -8,6 +8,18 @@ import { View } from "react-native-web";
 const Medicamentos = ({medicamentos})=>{
   return (
     <Page header={<h2>Medicamentos</h2>} footer={<Nav/>}>
+      <section className="body">
+      
+      <table className="rwd-table">
+      <tr>
+    <th>Codigo</th>
+    <th>Nombre</th>
+    <th>Costo</th>
+    <th>Cantidad</th>
+    <th>Vencimiento</th>
+  </tr>
+      </table>
+      </section>
       {
       medicamentos?.map((o)=>{
           return <MedicamentoItem key={o._id} medicamento={o} />
@@ -21,15 +33,7 @@ const MedicamentoItem = ({medicamento})=>{
   let navigate = useNavigate();
   return (
     <section className="body">
-    <View>
-  <table className="rwd-table">
-  <tr>
-    <th>Codigo</th>
-    <th>Nombre</th>
-    <th>Costo</th>
-    <th>Cantidad</th>
-    <th>Vencimiento</th>
-  </tr>
+    <table className="rwd-table">
   <tr>
     <td>{medicamento.codigo}</td>
     <td>{medicamento.nombre}</td>
@@ -37,11 +41,10 @@ const MedicamentoItem = ({medicamento})=>{
     <td>{medicamento.cantidad}</td>
     <td>{medicamento.fechaVencimiento}</td>
   </tr>
-  
 </table>
 
   
-    </View>
+    
     </section>
   );
 }

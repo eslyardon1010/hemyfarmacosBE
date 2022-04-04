@@ -42,7 +42,7 @@ const Login = ({
           hasError={!!(errorPassword && true)}
           onChange={onChangeHandler}
         />
-        <PrimaryButton className="button" onClick={onConfirmClick}>
+        <PrimaryButton onClick={onConfirmClick}>
           Iniciar Sesión
         </PrimaryButton>
         <SecondaryButton onClick={() => navigate("/signin")} >

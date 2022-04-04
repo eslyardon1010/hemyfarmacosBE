@@ -13,8 +13,8 @@ const MedicamentosPage = ()=>{
       const loadData = async ()=> {
         dispatch({type:'MEDICAMENTOS_LOADING', payload:{}});
         try {
-          const data = await privateAxios.get('/api/v1/medicamentos/all');
-          console.log(data);
+          const {data:{medicamento,status} }= await privateAxios.get('/api/v1/medicamentos/all');
+         
           dispatch({type:'MEDICAMENTOS_SUCCESS', payload: {medicamento}});
         } catch(ex){
           console.log(ex);

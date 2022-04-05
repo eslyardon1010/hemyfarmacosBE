@@ -13,7 +13,7 @@ const VentasPage = ()=>{
       const loadData = async ()=> {
         dispatch({type:'VENTAS_LOADING', payload:{}});
         try {
-          const {data:{venta,status} }= await privateAxios.get('/api/v1/medicamentos/all');
+          const {data:{venta,status} }= await privateAxios.get('/api/v1/ventas/all');
          
           dispatch({type:'VENTAS_SUCCESS', payload: {venta}});
         } catch(ex){

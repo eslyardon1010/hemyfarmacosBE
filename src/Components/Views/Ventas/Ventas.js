@@ -49,7 +49,7 @@ const VentaItem = ({venta})=>{
           <td>{venta.codigoVenta}</td>
           <td>{venta.idCliente}</td>
           <td>{venta.nombreCliente}</td>
-          <td>{venta.idMedicamenti}</td>
+          <td>{venta.idMedicament0}</td>
           <td>{venta.nombreMedicamento}</td>
           <td>{venta.cantidad}</td>
           <td>{venta.precio}</td>

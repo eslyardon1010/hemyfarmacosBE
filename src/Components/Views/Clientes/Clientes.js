@@ -2,13 +2,18 @@
 import Nav from "../../UX/Nav/Nav";
 import Page from "../../UX/Page/Page";
 import { PrimaryButton } from "../../UX/Forms/Button";
-
+import { useNavigate, useParams } from "react-router-dom";
 
 import "./Clientes.css";
+import { useState } from "react";
+import { privateAxios } from "../../../Lib/apiClient";
 const Clientes = ({clientes})=>{
+  const routerNavigator = useNavigate();
+  const [posts, setPosts] = useState([])
+    
   return (
     <Page header={<h2>Clientes</h2>} footer={<Nav/>}>
-      <PrimaryButton className="mover" onClick={() =>console.warn("HOLA")}>
+      <PrimaryButton className="mover" onClick={() =>{routerNavigator('/addcliente')}}>
        Agregar
        <img className="btnAgregar" src="https://i.ibb.co/0skfdFF/plus.png" alt="" />
       </PrimaryButton>
@@ -35,6 +40,9 @@ const Clientes = ({clientes})=>{
 }
 
 const ClienteItem = ({cliente})=>{
+  
+  const {params} = useParams();
+
   return (
     <section>
       <table>
@@ -45,12 +53,12 @@ const ClienteItem = ({cliente})=>{
             <td> {cliente.apellido} </td>
             <td> {cliente.telefono}  </td>
             <td>
-              <button className="btneliminar">
+              <button className="btneliminar" onClick={() =>{Delete(cliente._id)}} >
               <img src="https://i.ibb.co/JdmBTkt/delete.png" alt="" />
               </button>
              </td>
              <td>
-              <button className="btneditar">
+              <button className="btneditar" >
               <img src="https://i.ibb.co/vxBgLdF/lapiz-1.png" alt="" />
               </button>
              </td>
@@ -60,6 +68,18 @@ const ClienteItem = ({cliente})=>{
     </section>
   );
   
+}
+
+const Delete = async (id)=> {
+    try{
+      window.alert("Cliente Eliminado");
+      const data = await privateAxios.delete(
+        `/api/v1/clientes/delete/${id}`,
+      );
+      console.log('Signin Request: ', data)
+    } catch(ex) {
+      console.log('Error on Sigin submit', ex);
+    }
 }
 
 export default Clientes;

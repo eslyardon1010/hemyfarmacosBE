@@ -36,7 +36,7 @@ const LoginPage = () => {
       const {jwt:jwtToken, user} = data.data;
 
       dispatch({ type:'ON_LOGIN_SUCCESS', payload:{jwtToken, ...user}});
-      routerNavigator('/addcliente');
+      routerNavigator('/principal');
     } catch (ex) {
       dispatch({ type:'ON_LOGIN_ERROR', payload:{errors:['¡Credenciales Incorrectas!']}});
       console.log('Error on Sigin submit', ex);

@@ -1,6 +1,6 @@
 import AddClientes from './AddClientes';
 import { useState } from 'react';
-import { publicAxios } from '../../../Lib/apiClient';
+import { privateAxios, publicAxios } from '../../../Lib/apiClient';
 
 const AddClientesPage = ()=>{
   const [txtIdentidad, setTxtIdentidad] = useState('');
@@ -32,8 +32,8 @@ const AddClientesPage = ()=>{
     e.preventDefault();
     e.stopPropagation();
     try{
-      const data = await publicAxios.post(
-        '/api/v1/clientes/new/',
+      const data = await privateAxios.post(
+        '/api/v1/clientes/new',
         {
           identidad: txtIdentidad,
           nombre: txtNombre,

@@ -1,12 +1,11 @@
 
 import Nav from "../../UX/Nav/Nav";
 import Page from "../../UX/Page/Page";
-import "./Medicamentos.css";
+
 import { PrimaryButton } from "../../UX/Forms/Button";
 
 
-
-const Medicamentos = ({medicamentos})=>{
+const Proveedores = ({proveedores})=>{
   
   return (
     <Page header={<h2>Medicamentos</h2>} footer={<Nav/>}>
@@ -16,34 +15,36 @@ const Medicamentos = ({medicamentos})=>{
       </PrimaryButton>
        <table className="table-1"> 
      <thead>
-<th>CODIGO</th>
+<th>IDENTIDAD</th>
 <th>NOMBRE</th>
-<th>COSTO</th>
-<th>CANTIDAD</th>
-<th>VENCIMIENTO</th>
+<th>APELLIDO</th>
+<th>DIRECCION</th>
+<th>TELEFONO</th>
+<th>EMAIL</th>
 <th>ELIMINAR</th>
 <th>EDITAR</th>
     </thead>
      </table>
       {
-      medicamentos?.map((o)=>{
-          return <MedicamentoItem key={o._id} medicamento={o} />
+      proveedores?.map((o)=>{
+          return <ProveedorItem key={o._id} proveedor={o} />
         })
       }
     </Page>
   );
 }
-const MedicamentoItem = ({medicamento})=>{
+const ProveedorItem = ({proveedor})=>{
   return (
     
     <section>
       <table>
         <tbody>
-          <td>{medicamento.codigo}</td>
-          <td>{medicamento.nombre}</td>
-          <td>{medicamento.costo}</td>
-          <td>{medicamento.cantidad}</td>
-          <td>{medicamento.fechaVencimiento}</td>
+          <td>{proveedor.identidad}</td>
+          <td>{proveedor.nombre}</td>
+          <td>{proveedor.apellido}</td>
+          <td>{proveedor.direccion}</td>
+          <td>{proveedor.telefono}</td>
+          <td>{proveedor.email}</td>
             <td>
               <button className="btneliminar">
               <img src="https://i.ibb.co/JdmBTkt/delete.png" alt="" />
@@ -59,4 +60,4 @@ const MedicamentoItem = ({medicamento})=>{
 }
 
 
-export default Medicamentos;
+export default Proveedores;

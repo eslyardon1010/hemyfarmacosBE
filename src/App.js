@@ -13,8 +13,8 @@ import Todo from './Components/Views/Todo/TodoPage';
 import Medicamentos from './Components/Views/Medicamentos/MedicametosPage';
 import Principal from './Components/Views/Principal/PrincipalPage'
 import Clientes from './Components/Views/Clientes/ClientesPage';
-
-
+import Proveedores from './Components/Views/Proveedores/ProveedoresPage'
+import Ventas from './Components/Views/Ventas/VentasPage'
 function App() {
   return (
     <Provider store={store}>
@@ -29,6 +29,8 @@ function App() {
             <Route path="/medicamentos" element={<Private><Medicamentos /></Private>} />
             <Route path="/clientes" element={<Private><Clientes /></Private>} />
             <Route path="/principal" element={<Private><Principal /></Private>} />
+            <Route path="/proveedores" element={<Private><Proveedores /></Private>} />
+            <Route path="/ventas" element={<Private><Ventas /></Private>} />
           </Routes>
         </BrowserRouter>
       </PersistGate>

@@ -7,6 +7,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./Clientes.css";
 import { useState } from "react";
 import { privateAxios } from "../../../Lib/apiClient";
+
 const Clientes = ({clientes})=>{
   const routerNavigator = useNavigate();
   const [posts, setPosts] = useState([])
@@ -42,8 +43,8 @@ const Clientes = ({clientes})=>{
 const ClienteItem = ({cliente})=>{
   
   const {params} = useParams();
-
-  return (
+ 
+  return (  
     <section>
       <table>
         <tbody>
@@ -67,11 +68,13 @@ const ClienteItem = ({cliente})=>{
       </table>
     </section>
   );
+
   
 }
 
 const Delete = async (id)=> {
     try{
+    
       window.alert("Cliente Eliminado");
       const data = await privateAxios.delete(
         `/api/v1/clientes/delete/${id}`,
@@ -80,6 +83,8 @@ const Delete = async (id)=> {
     } catch(ex) {
       console.log('Error on Sigin submit', ex);
     }
+  
+  
 }
 
 export default Clientes;

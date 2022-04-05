@@ -4,7 +4,7 @@ import Page from "../../UX/Page/Page";
 import "./Medicamentos.css";
 import { PrimaryButton } from "../../UX/Forms/Button";
 
-
+import { privateAxios } from "../../../Lib/apiClient";
 
 const Medicamentos = ({medicamentos})=>{
   
@@ -45,7 +45,7 @@ const MedicamentoItem = ({medicamento})=>{
           <td>{medicamento.cantidad}</td>
           <td>{medicamento.fechaVencimiento}</td>
             <td>
-              <button className="btneliminar">
+            <button className="btneliminar" onClick={() =>{Delete(medicamento._id)}} >
               <img src="https://i.ibb.co/JdmBTkt/delete.png" alt="" />
               </button>
              </td>
@@ -57,6 +57,19 @@ const MedicamentoItem = ({medicamento})=>{
     </section>
   );
 }
+const Delete = async (id)=> {
+  try{
+  
+    window.alert("Medicamento Eliminado");
+    const data = await privateAxios.delete(
+      `/api/v1/medicamentos/delete/${id}`,
+    );
+    console.log('Signin Request: ', data)
+  } catch(ex) {
+    console.log('Error on Sigin submit', ex);
+  }
 
+
+}
 
 export default Medicamentos;

@@ -15,7 +15,8 @@ import Principal from './Components/Views/Principal/PrincipalPage'
 import Clientes from './Components/Views/Clientes/ClientesPage';
 import Proveedores from './Components/Views/Proveedores/ProveedoresPage'
 import Ventas from './Components/Views/Ventas/VentasPage'
-import AddClientes from './Components/Views/AddClientes/AddClientesPage';
+import AddClientes from './Components/Views/Agregar/AddClientesPage';
+import AddMedicamentos from './Components/Views/Agregar/AddMedicamentosPage';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path="/proveedores" element={<Private><Proveedores /></Private>} />
             <Route path="/ventas" element={<Private><Ventas /></Private>} />
             <Route path="/addcliente" element={<Private><AddClientes/></Private>} />
+            <Route path="/addmedicamentos" element={<Private><AddMedicamentos/></Private>} />
           </Routes>
         </BrowserRouter>
       </PersistGate>

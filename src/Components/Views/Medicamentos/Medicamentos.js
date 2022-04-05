@@ -5,12 +5,12 @@ import "./Medicamentos.css";
 import { PrimaryButton } from "../../UX/Forms/Button";
 
 import { privateAxios } from "../../../Lib/apiClient";
-
+import { useNavigate } from "react-router-dom";
 const Medicamentos = ({medicamentos})=>{
-  
+   const routerNavigator = useNavigate();
   return (
     <Page header={<h2>Medicamentos</h2>} footer={<Nav/>}>
-        <PrimaryButton className="mover" onClick={() =>console.warn("HOLA")}>
+        <PrimaryButton className="mover" onClick={() =>{routerNavigator('/addmedicamentos')}}>
        Agregar
        <img className="btnAgregar" src="https://i.ibb.co/0skfdFF/plus.png" alt="" />
       </PrimaryButton>

@@ -21,7 +21,7 @@ const AddClientes = ({
   return (
     <Page header={(<h2>&nbsp;Crear Cliente</h2>)} footer={<Nav />}>
       <section className="align">
-      <section className = "container-add"> 
+      <section className = "container-add-clientes"> 
         <Input
           label="Identidad"
           type="text"

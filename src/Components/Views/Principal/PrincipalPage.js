@@ -9,6 +9,7 @@ const PrincipalPage=  () => {
     const routerNavigator = useNavigate();
     return (
         <Page header={<h2>Inicio</h2>} >
+		
  <View>
  <button className="button"  onClick={() => routerNavigator("/medicamentos")}>
      <img className="img" src="https://i.ibb.co/jGV4w75/medicamentos.png" alt="" />
@@ -37,6 +38,7 @@ const PrincipalPage=  () => {
 	<div className="button__vertical"></div>
 </button>
     </View>
+
         </Page>
 
     )

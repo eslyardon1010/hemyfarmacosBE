@@ -18,7 +18,8 @@ import Ventas from './Components/Views/Ventas/VentasPage'
 import AddClientes from './Components/Views/Agregar/AddClientesPage';
 import AddMedicamentos from './Components/Views/Agregar/AddMedicamentosPage';
 import AddVentas from './Components/Views/Agregar/AddVentasPage';
-import AddProveedores from './Components/Views/Agregar/AddProveedores';
+import AddProveedores from './Components/Views/Agregar/AddProveedoresPage';
+
 function App() {
   return (
     <Provider store={store}>

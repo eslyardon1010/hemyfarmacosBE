@@ -8,3 +8,26 @@
     border-radius: 9px;
     box-shadow: 4px 4px 4px 4px rgba(238, 238, 238, 0.892);
 }
+
+.container-add-proveedores {
+    margin-left: 2px;
+    background-color: white;
+    width: 350px;
+    height: 650px;
+    padding: 0;
+    transition: all 0.3s;
+    border-radius: 9px;
+    box-shadow: 4px 4px 4px 4px rgba(238, 238, 238, 0.892);
+}
+
+
+.container-add-clientes {
+    margin-left: 2px;
+    background-color: white;
+    width: 350px;
+    height: 550px;
+    padding: 0;
+    transition: all 0.3s;
+    border-radius: 9px;
+    box-shadow: 4px 4px 4px 4px rgba(238, 238, 238, 0.892);
+}

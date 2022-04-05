@@ -22,7 +22,7 @@ const AddProveedores = ({
   return (
     <Page header={(<h2>&nbsp;Crear Proveedores</h2>)} footer={<Nav />}>
       <section className="align">
-      <section className = "container-add"> 
+      <section className = "container-add-proveedores"> 
         <Input
           label="Identidad"
           type="text"
@@ -63,7 +63,7 @@ const AddProveedores = ({
           type="text"
           name="txtTelefono"
           placeholder="Telefono"
-          value={txtTelefononValue}
+          value={txtTelefonoValue}
           onChange={onChangeHandler}
         />
          <Input
@@ -78,7 +78,7 @@ const AddProveedores = ({
         <PrimaryButton onClick={onConfirmClick}>
          Guardar
         </PrimaryButton>
-        <SecondaryButton  onClick={() => navigate("/clientes")}>
+        <SecondaryButton  onClick={() => navigate("/proveedores")}>
           Cancelar
         </SecondaryButton>
       </section>

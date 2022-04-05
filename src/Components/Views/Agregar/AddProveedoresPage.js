@@ -1,6 +1,7 @@
-import AddClientes from './AddClientes';
+
 import { useState } from 'react';
 import { privateAxios, publicAxios } from '../../../Lib/apiClient';
+import AddProveedores from './AddProveedores';
 
 const AddProveedoresPage = ()=>{
   const [txtIdentidad, setTxtIdentidad] = useState('');
@@ -24,10 +25,10 @@ const AddProveedoresPage = ()=>{
          setTxtDireccion(value);
          break;
     case 'txtTelefono':
-         setTxtApellido(value);
+         setTxtTelefono(value);
          break;
      case 'txtEmail':
-         setTxtDireccion(value);
+         setTxtEmail(value);
          break;
     }
   }
@@ -36,7 +37,7 @@ const AddProveedoresPage = ()=>{
     e.stopPropagation();
     try{
       const data = await privateAxios.post(
-        '/api/v1/Proveedores/new',
+        '/api/v1/proveedores/new',
         {
           identidad: txtIdentidad,
           nombre: txtNombre,
@@ -62,7 +63,7 @@ const AddProveedoresPage = ()=>{
   // }
   return (
     <>
-      <AddClientes
+      <AddProveedores
         txtIdentidadValue={txtIdentidad}
         txtNombreValue={txtNombre}
         txtApellidoValue={txtApellido}
@@ -77,4 +78,4 @@ const AddProveedoresPage = ()=>{
   )
 }
 
-export default  AddClientesPage;
+export default  AddProveedoresPage;

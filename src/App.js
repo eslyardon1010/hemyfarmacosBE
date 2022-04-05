@@ -17,7 +17,7 @@ import Proveedores from './Components/Views/Proveedores/ProveedoresPage'
 import Ventas from './Components/Views/Ventas/VentasPage'
 import AddClientes from './Components/Views/Agregar/AddClientesPage';
 import AddMedicamentos from './Components/Views/Agregar/AddMedicamentosPage';
-
+import AddVentas from './Components/Views/Agregar/AddVentasPage';
 function App() {
   return (
     <Provider store={store}>
@@ -36,6 +36,7 @@ function App() {
             <Route path="/ventas" element={<Private><Ventas /></Private>} />
             <Route path="/addcliente" element={<Private><AddClientes/></Private>} />
             <Route path="/addmedicamentos" element={<Private><AddMedicamentos/></Private>} />
+            <Route path="/addventas" element={<Private><AddVentas/></Private>} />
           </Routes>
         </BrowserRouter>
       </PersistGate>

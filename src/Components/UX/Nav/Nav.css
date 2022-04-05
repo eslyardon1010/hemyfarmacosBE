@@ -32,6 +32,10 @@
 }
 
 .page_footer nav ul li a.active {
-    background-color: #33D2FF;
+    background-color: #33d3ff6f;
     color: #000;
+}
+
+.imagen {
+   float: left;
 }

@@ -3,13 +3,16 @@ import Nav from "../../UX/Nav/Nav";
 import Page from "../../UX/Page/Page";
 
 import { PrimaryButton } from "../../UX/Forms/Button";
+import { privateAxios } from "../../../Lib/apiClient";
+import { useNavigate } from "react-router-dom";
 
 
 const Ventas = ({ventas})=>{
+  const routerNavigator = useNavigate();
   
   return (
     <Page header={<h2>Medicamentos</h2>} footer={<Nav/>}>
-        <PrimaryButton className="mover" onClick={() =>console.warn("HOLA")}>
+        <PrimaryButton className="mover" onClick={() =>{routerNavigator('/addventas')}}>
        Agregar
        <img className="btnAgregar" src="https://i.ibb.co/0skfdFF/plus.png" alt="" />
       </PrimaryButton>
@@ -59,7 +62,7 @@ const VentaItem = ({venta})=>{
           <td>{venta.total}</td>
 
             <td>
-              <button className="btneliminar">
+              <button className="btneliminar" onClick={() =>{Delete(venta._id)}}>
               <img src="https://i.ibb.co/JdmBTkt/delete.png" alt="" />
               </button>
              </td>
@@ -70,6 +73,18 @@ const VentaItem = ({venta})=>{
       </table>
     </section>
   );
+}
+
+const Delete = async (id)=> {
+  try{
+    window.alert("Venta Eliminada Exitosamente");
+    const data = await privateAxios.delete(
+      `/api/v1/ventas/delete/${id}`,
+    );
+    console.log('Signin Request: ', data)
+  } catch(ex) {
+    console.log('Error on Sigin submit', ex);
+  }
 }
 
 

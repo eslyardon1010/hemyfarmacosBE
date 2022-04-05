@@ -14,6 +14,7 @@ const Nav = ()=>{
               to='/medicamentos'
               className={currentLocation.pathname === '/medicamentos' ? 'active' : ''}
             >
+               <img className="imagen" src="https://i.ibb.co/FKv5VmV/medicine-jar.png" alt="" />
               Medicamentos
             </NavLink>
           </li>
@@ -22,15 +23,26 @@ const Nav = ()=>{
               to='/clientes'
               className={currentLocation.pathname === '/clientes' ? 'active' : ''}
             >
-            Clientes
+              <img className="imagen" src="https://i.ibb.co/8KZQyTP/rating.png" alt="" />
+               Clientes
             </NavLink>
           </li>
           <li>
             <NavLink
-              to='/addmedicamentos'
-              className={currentLocation.pathname === '/addmedicamentos' ? 'active' : ''}
+              to='/proveedores'
+              className={currentLocation.pathname === '/proveedores' ? 'active' : ''}
             >
-            Add Medicamentos
+               <img className="imagen" src="https://i.ibb.co/GvcSfYf/provider.png" alt="" />
+            Proveedores
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to='/ventas'
+              className={currentLocation.pathname === '/ventas' ? 'active' : ''}
+            >
+               <img className="imagen" src="https://i.ibb.co/6WF3VdT/sales-2.png" alt="" />
+           Ventas
             </NavLink>
           </li>
         </ul>

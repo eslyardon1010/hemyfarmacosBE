@@ -77,8 +77,12 @@ class Medicamentos {
 
   
   async deleteOne(id) {
-    
-  }
+    const _id = new ObjectId(id);
+    const filter = { _id };
+    const myDocument = await this.collection.deleteOne(filter);
+    return myDocument;
+
+}
 
 
 }

@@ -30,7 +30,7 @@ const Ventas = ({ventas})=>{
 <th>Isv</th>
 <th>Descuento</th>
 <th>Total</th>
-<th>Vendedor</th>
+<th>ELIMINAR</th>
 
     </thead>
      </table>

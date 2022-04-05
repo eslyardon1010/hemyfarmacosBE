@@ -22,7 +22,6 @@ const Medicamentos = ({medicamentos})=>{
 <th>CANTIDAD</th>
 <th>VENCIMIENTO</th>
 <th>ELIMINAR</th>
-<th>EDITAR</th>
     </thead>
      </table>
       {
@@ -49,9 +48,7 @@ const MedicamentoItem = ({medicamento})=>{
               <img src="https://i.ibb.co/JdmBTkt/delete.png" alt="" />
               </button>
              </td>
-             <td>
-               EDITAR
-             </td>
+       
         </tbody>
       </table>
     </section>

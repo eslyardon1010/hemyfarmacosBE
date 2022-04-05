@@ -9,7 +9,6 @@ import {store, persistor} from './Store';
 import Splash from './Components/Views/Splash';
 import Signin from './Components/Views/Signin/SigninPage';
 import Login from './Components/Views/Login/LoginPage';
-import Todo from './Components/Views/Todo/TodoPage';
 import Medicamentos from './Components/Views/Medicamentos/MedicametosPage';
 import Principal from './Components/Views/Principal/PrincipalPage'
 import Clientes from './Components/Views/Clientes/ClientesPage';
@@ -30,7 +29,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signin" element={<Signin />} />
 
-            <Route path="/todo" element={<Private><Todo /></Private>} />
             <Route path="/medicamentos" element={<Private><Medicamentos /></Private>} />
             <Route path="/clientes" element={<Private><Clientes /></Private>} />
             <Route path="/principal" element={<Private><Principal /></Private>} />

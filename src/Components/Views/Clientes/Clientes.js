@@ -26,7 +26,6 @@ const Clientes = ({clientes})=>{
       <th>APELLIDO</th>
       <th>TELEFONO</th>
       <th>ELIMINAR</th>
-      <th>EDITAR</th>
       </tr>
     </thead>
      </table>
@@ -56,11 +55,6 @@ const ClienteItem = ({cliente})=>{
             <td>
               <button className="btneliminar" onClick={() =>{Delete(cliente._id)}} >
               <img src="https://i.ibb.co/JdmBTkt/delete.png" alt="" />
-              </button>
-             </td>
-             <td>
-              <button className="btneditar" >
-              <img src="https://i.ibb.co/vxBgLdF/lapiz-1.png" alt="" />
               </button>
              </td>
           </tr>

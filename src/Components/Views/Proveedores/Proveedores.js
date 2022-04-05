@@ -23,7 +23,6 @@ const Proveedores = ({proveedores})=>{
 <th>TELEFONO</th>
 <th>EMAIL</th>
 <th>ELIMINAR</th>
-<th>EDITAR</th>
     </thead>
      </table>
       {
@@ -51,9 +50,7 @@ const ProveedorItem = ({proveedor})=>{
               <img src="https://i.ibb.co/JdmBTkt/delete.png" alt="" />
               </button>
              </td>
-             <td>
-               EDITAR
-             </td>
+            
         </tbody>
       </table>
     </section>

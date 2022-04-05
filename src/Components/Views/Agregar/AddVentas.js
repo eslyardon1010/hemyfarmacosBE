@@ -2,7 +2,7 @@ import Page from "../../UX/Page/Page";
 import Input from "../../UX/Forms/Input";
 import { PrimaryButton, SecondaryButton } from "../../UX/Forms/Button";
 import Nav from "../../UX/Nav/Nav";
-import "./AddClientes.css"
+import "./Ventas.css"
 import { useNavigate } from "react-router-dom"; 
 
 const AddVentas = ({
@@ -13,11 +13,11 @@ const AddVentas = ({
   txtIdMedicamentoValue,
   txtNombreMedicamentoValue,
   txtCantidadValue,
-    txtPrecioValue,
-    txtSubtotalValue,
-    txtIsvValue,
-    txtDescuentoValue,
-    txtTotalValue,
+  txtPrecioValue,
+  txtSubtotalValue,
+  txtIsvValue,
+  txtDescuentoValue,
+  txtTotalValue,
   onChange: onChangeHandler,
   errorTxtFecha,
   errorCodigo,
@@ -27,18 +27,22 @@ const AddVentas = ({
   let navigate = useNavigate();
   return (
     <Page header={(<h2>&nbsp;Crear Venta</h2>)} footer={<Nav />}>
-      <section className="align">
-      <section className = "container-add"> 
-        <Input
+      
+      <div id='wrapper'> 
+      <form className='form'>
+        <p className='field required half'>
+        <Input className='text-input'
           label="Fecha"
-          type="text"
+          type="date"
           name="txtFecha"
           placeholder="Fecha "
           value={txtFechaValue}
           error={errorTxtFecha}
           onChange={onChangeHandler}
         />
-        <Input
+        </p>
+        <p className='field required half' >
+        <Input  className='text-input'
           label="Codigo"
           type="text"
           name="txtCodigo"
@@ -47,8 +51,9 @@ const AddVentas = ({
           error={errorCodigo}
           onChange={onChangeHandler}
         />
-       
-         <Input
+        </p>
+        <p className='field required half' >
+         <Input className='text-input'
           label="IdCliente"
           type="text"
           name="txtIdCliente"
@@ -56,7 +61,9 @@ const AddVentas = ({
           value={txtIdClienteValue}
           onChange={onChangeHandler}
         />
-         <Input
+        </p>
+        <p className='field required half' >
+         <Input  className='text-input'
           label="NombreCliente"
           type="text"
           name="txtNombreCliente"
@@ -64,7 +71,9 @@ const AddVentas = ({
           value={txtNombreClienteValue}
           onChange={onChangeHandler}
         />
-        <Input
+        </p>
+        <p className='field required half' >
+        <Input  className='text-input'
           label="IdMedicamento"
           type="text"
           name="txtIdMedicamento"
@@ -72,7 +81,9 @@ const AddVentas = ({
           value={txtIdMedicamentoValue}
           onChange={onChangeHandler}
         />
-            <Input
+        </p>
+        <p className='field required half'>
+         <Input  className='text-input'
           label="NombreMedicamento"
           type="text"
           name="txtNombreMedicamento"
@@ -80,7 +91,9 @@ const AddVentas = ({
           value={txtNombreMedicamentoValue}
           onChange={onChangeHandler}
         />
-        <Input
+        </p>
+        <p className='field required half'>
+        <Input  className='text-input'
           label="Cantidad"
           type="text"
           name="txtCantidad"
@@ -88,8 +101,9 @@ const AddVentas = ({
           value={txtCantidadValue}
           onChange={onChangeHandler}
         />
-
-<Input
+        </p>
+         <p className='field required half'>
+        <Input  className='text-input'
           label="Precio"
           type="text"
           name="txtPrecio"
@@ -97,7 +111,9 @@ const AddVentas = ({
           value={txtPrecioValue}
           onChange={onChangeHandler}
         />
-        <Input
+        </p>
+        <p className='field required half'>
+        <Input  className='text-input' 
           label="Subtotal"
           type="text"
           name="txtSubtotal"
@@ -105,7 +121,9 @@ const AddVentas = ({
           value={txtSubtotalValue}
           onChange={onChangeHandler}
         />
-        <Input
+        </p>
+        <p className='field required half'>
+        <Input  className='text-input'
           label="Isv"
           type="text"
           name="txtIsv"
@@ -113,8 +131,9 @@ const AddVentas = ({
           value={txtIsvValue}
           onChange={onChangeHandler}
         />
-
-<Input
+        </p>
+         <p className='field required half'>
+        <Input  className='text-input'
           label="Descuento"
           type="text"
           name="txtDescuento"
@@ -122,7 +141,9 @@ const AddVentas = ({
           value={txtDescuentoValue}
           onChange={onChangeHandler}
         />
-<Input
+        </p>
+        <p className='field required half'>
+        <Input  className='text-input'
           label="Total"
           type="text"
           name="txtTotal"
@@ -130,15 +151,17 @@ const AddVentas = ({
           value={txtTotalValue}
           onChange={onChangeHandler}
         />
-
-        <PrimaryButton onClick={onConfirmClick}>
+         </p>
+         <p className='field'>
+        <PrimaryButton  onClick={onConfirmClick}>
          Guardar
         </PrimaryButton>
         <SecondaryButton  onClick={() => navigate("/ventas")}>
           Cancelar
         </SecondaryButton>
-      </section>
-      </section>
+        </p>
+        </form>
+      </div>
     </Page>
   );
 }

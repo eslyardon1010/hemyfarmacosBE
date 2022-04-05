@@ -15,6 +15,8 @@ import Principal from './Components/Views/Principal/PrincipalPage'
 import Clientes from './Components/Views/Clientes/ClientesPage';
 import Proveedores from './Components/Views/Proveedores/ProveedoresPage'
 import Ventas from './Components/Views/Ventas/VentasPage'
+import AddClientes from './Components/Views/AddClientes/AddClientesPage';
+
 function App() {
   return (
     <Provider store={store}>
@@ -31,6 +33,7 @@ function App() {
             <Route path="/principal" element={<Private><Principal /></Private>} />
             <Route path="/proveedores" element={<Private><Proveedores /></Private>} />
             <Route path="/ventas" element={<Private><Ventas /></Private>} />
+            <Route path="/addcliente" element={<Private><AddClientes/></Private>} />
           </Routes>
         </BrowserRouter>
       </PersistGate>
